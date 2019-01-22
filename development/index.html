@@ -53,7 +53,7 @@
       
         
         
-        <meta name="theme-color" content="#7e57c2">
+        <meta name="theme-color" content="#00bcd4">
       
     
     
@@ -74,7 +74,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="deep-purple" data-md-color-accent="">
+    <body dir="ltr" data-md-color-primary="cyan" data-md-color-accent="">
   
     <svg class="md-svg">
       <defs>
@@ -301,16 +301,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#updating-swagger-documentation" title="Updating Swagger documentation" class="md-nav__link">
-    Updating Swagger documentation
+  <a href="#updating-assets" title="Updating assets" class="md-nav__link">
+    Updating assets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ui-components" title="UI components" class="md-nav__link">
+    UI components
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#updating-ui-components" title="Updating UI components" class="md-nav__link">
-    Updating UI components
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -418,16 +424,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#updating-swagger-documentation" title="Updating Swagger documentation" class="md-nav__link">
-    Updating Swagger documentation
+  <a href="#updating-assets" title="Updating assets" class="md-nav__link">
+    Updating assets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ui-components" title="UI components" class="md-nav__link">
+    UI components
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#updating-ui-components" title="Updating UI components" class="md-nav__link">
-    Updating UI components
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -466,7 +478,7 @@
 <ol>
 <li>Create the directory to clone into: <code>mkdir -p $GOPATH/src/github.com/markphelps</code></li>
 <li>Clone this repo: <code>git clone https://github.com/markphelps/flipt $GOPATH/src/github.com/markphelps</code></li>
-<li>Run <code>make dev</code> to download dependencies</li>
+<li>Run <code>make setup</code> to download dependencies</li>
 <li>Run <code>make test</code> to execute the test suite</li>
 <li>Run <code>make build</code> to compile a binary</li>
 <li>Run <code>make help</code> to see a full list of possible make commands</li>
@@ -491,13 +503,11 @@
 <li><code>flipt.pb.gw.go</code></li>
 <li><code>flipt.validator.pb.go</code></li>
 </ul>
-<h3 id="updating-swagger-documentation">Updating Swagger documentation</h3>
-<p>The Swagger documentation for the API is built using the above generated <code>.proto</code> files.</p>
-<p>After running <code>make proto</code> it's also a good idea to run <code>make swagger.</code></p>
-<p>This will regenerate <code>swagger/flipt.swagger.json</code> which contains the Swagger API definitions for the Flipt API. It will also regenerate the embedded HTML that is compiled in the Flipt binary.</p>
-<h3 id="updating-ui-components">Updating UI components</h3>
-<p>The UI is built using <code>yarn</code> and is also statically compiled into the Flipt binary.</p>
-<p>The <a href="https://github.com/markphelps/flipt/tree/master/ui/README.md">ui/README.md</a> in the <a href="https://github.com/markphelps/flipt/tree/master/ui">ui</a> directory has more information on how to build the UI and also how to run it locally during development.</p>
+<h3 id="updating-assets">Updating assets</h3>
+<p>Running <code>make assets</code> will regenerate the embedded assets (ui, swagger documentation) so that the next time <code>make build</code> is run they will be included in the new binary.</p>
+<h4 id="ui-components">UI components</h4>
+<p>The UI is built using <a href="https://yarnpkg.com/en/">Yarn</a> and <a href="https://webpack.js.org/">webpack</a> and is also statically compiled into the Flipt binary.</p>
+<p>The <a href="https://github.com/markphelps/flipt/tree/master/ui/README.md">ui/README.md</a> has more information on how to build the UI and also how to run it locally during development.</p>
                 
                   
                 

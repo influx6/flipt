@@ -251,9 +251,78 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting Started
+      </label>
+    
     <a href="./" title="Getting Started" class="md-nav__link md-nav__link--active">
       Getting Started
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#integration" title="Integration" class="md-nav__link">
+    Integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flipt-native-grpc-client" title="Flipt Native GRPC Client" class="md-nav__link">
+    Flipt Native GRPC Client
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-flipt-grpc-clients" title="Getting the Flipt GRPC clients" class="md-nav__link">
+    Getting the Flipt GRPC clients
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manually" title="Manually" class="md-nav__link">
+    Manually
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-bazel" title="Using Bazel" class="md-nav__link">
+    Using Bazel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -287,6 +356,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#integration" title="Integration" class="md-nav__link">
+    Integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flipt-native-grpc-client" title="Flipt Native GRPC Client" class="md-nav__link">
+    Flipt Native GRPC Client
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-the-flipt-grpc-clients" title="Getting the Flipt GRPC clients" class="md-nav__link">
+    Getting the Flipt GRPC clients
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manually" title="Manually" class="md-nav__link">
+    Manually
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-bazel" title="Using Bazel" class="md-nav__link">
+    Using Bazel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -299,6 +424,49 @@
                 
                 
                 <h1 id="getting-started">Getting Started</h1>
+<p>This document describes the how to integrate Flipt in your existing applications. To learn how to install and run Flipt, see the <a href="../installation/">Installation</a> documentation.</p>
+<h2 id="integration">Integration</h2>
+<p>Once you have the Flipt server up and running within your infrastructure, the next step is to integrate the Flipt client(s) with your applications that you would like to be able to use with Flipt.</p>
+<p>There are two ways to communicate with the Flipt server:</p>
+<ol>
+<li>Flipt Native GRPC client(s)</li>
+<li>Flipt REST API</li>
+</ol>
+<h2 id="flipt-native-grpc-client">Flipt Native GRPC Client</h2>
+<p>Since Flipt is a <a href="https://grpc.io/">GRPC</a> enabled application (see: <a href="../architecture/">Architecture</a>), to communicate with the Flipt server, you can use a generated GRPC client for your language of choice.</p>
+<p>This means that your application can use the Flipt GRPC client if it is written in one of the many languages that GRPC supports, including:</p>
+<ul>
+<li>C++</li>
+<li>Java</li>
+<li>Python</li>
+<li>Go</li>
+<li>Ruby</li>
+<li>C#</li>
+<li>Node.js</li>
+<li>Android Java</li>
+<li>Objective-C</li>
+<li>PHP</li>
+</ul>
+<p>The Flipt GRPC client is the preferred way to integrate your application with Flipt as it is more performant than REST and requires the least amount of configuration.</p>
+<p>An example Go application exists at <a href="https://github.com/markphelps/flipt/tree/master/example">https://github.com/markphelpsflipt/example</a>, showing how you would integrate with Flipt using the Go GRPC client.</p>
+<h3 id="getting-the-flipt-grpc-clients">Getting the Flipt GRPC clients</h3>
+<h4 id="manually">Manually</h4>
+<p>Currently, the best way to get the Flipt GRPC client in your language is to generate it yourself using the existing <a href="https://github.com/markphelps/flipt/blob/master/flipt.proto">protobuf definition</a>. The <a href="https://grpc.io/docs/">GRPC documentation</a> has extensive examples on how to generate GRPC clients in each supported language.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>GRPC generates both client implementation and the server interfaces. To use Flipt you only need the GRPC client implementation and can ignore the server code as this is implemented by Flipt itself.</p>
+</div>
+<h4 id="using-bazel">Using Bazel</h4>
+<p>If you are familiar with Google's <a href="https://www.bazel.build/">Bazel</a> build tool, you can also use it to streamline the generation of the Flipt GRPC client. The Flipt project has a Bazel <a href="https://github.com/markphelps/flipt/blob/master/BUILD.bazel">BUILD file</a> which contains rules that can be used to generate clients in the following languages:</p>
+<ul>
+<li>Java</li>
+<li>Go</li>
+<li>Ruby</li>
+<li>Python</li>
+</ul>
+<p>For example, to generate the Flipt GRPC client for Java, you would do the following:</p>
+<p><code>shell
+ TODO</code></p>
                 
                   
                 

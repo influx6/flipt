@@ -300,8 +300,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#download-coming-soon" title="Download (Coming Soon)" class="md-nav__link">
-    Download (Coming Soon)
+  <a href="#download" title="Download" class="md-nav__link">
+    Download
   </a>
   
 </li>
@@ -313,6 +313,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flipt-rest-api" title="Flipt REST API" class="md-nav__link">
+    Flipt REST API
+  </a>
   
 </li>
       
@@ -390,8 +397,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#download-coming-soon" title="Download (Coming Soon)" class="md-nav__link">
-    Download (Coming Soon)
+  <a href="#download" title="Download" class="md-nav__link">
+    Download
   </a>
   
 </li>
@@ -403,6 +410,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flipt-rest-api" title="Flipt REST API" class="md-nav__link">
+    Flipt REST API
+  </a>
   
 </li>
       
@@ -448,7 +462,7 @@
 <li>PHP</li>
 </ul>
 <p>The Flipt GRPC client is the preferred way to integrate your application with Flipt as it is more performant than REST and requires the least amount of configuration.</p>
-<p>An example Go application exists at <a href="https://github.com/markphelps/flipt/tree/master/example">https://github.com/markphelpsflipt/example</a>, showing how you would integrate with Flipt using the Go GRPC client.</p>
+<p>An example Go application exists at <a href="https://github.com/markphelps/flipt/tree/master/example">https://github.com/markphelps/flipt/example</a>, showing how you would integrate with Flipt using the Go GRPC client.</p>
 <h3 id="getting-the-flipt-grpc-clients">Getting the Flipt GRPC clients</h3>
 <h4 id="manually">Manually</h4>
 <p>Currently, the best way to get the Flipt GRPC client in your language is to generate it yourself using the existing <a href="https://github.com/markphelps/flipt/blob/master/flipt.proto">protobuf definition</a>. The <a href="https://grpc.io/docs/">GRPC documentation</a> has extensive examples on how to generate GRPC clients in each supported language.</p>
@@ -456,8 +470,16 @@
 <p class="admonition-title">Note</p>
 <p>GRPC generates both client implementation and the server interfaces. To use Flipt you only need the GRPC client implementation and can ignore the server code as this is implemented by Flipt itself.</p>
 </div>
-<h4 id="download-coming-soon">Download (Coming Soon)</h4>
+<h4 id="download">Download</h4>
 <p>Flipt GRPC clients are currently not available for download directly, but this work is in progress. Please check back soon.</p>
+<h2 id="flipt-rest-api">Flipt REST API</h2>
+<p>Flipt also comes equipped with a fully functional REST API. In fact, the Flipt UI is completely backed by this same API. This means that anything that can be done in the Flipt UI can also be done via the REST API.</p>
+<p>The Flipt REST API can also be used with any language that can make HTTP requests. This means that you don't need to use one of the above GRPC clients in order to integrate your application with Flipt.</p>
+<p>The latest version of the REST API is fully documented using OpenAPI v2 (formerly Swagger) specification available <a href="https://github.com/markphelps/flipt/blob/master/swagger/api/swagger.json">here</a>.</p>
+<p>Each Flipt server instance also hosts it's own REST API documentation. This documentation is reachable in the Flipt UI by clicking the <strong>API</strong> link in the header navigation.</p>
+<p><img alt="Flipt API" src="../assets/images/api.png" /></p>
+<p>This will load the API documentation which documents valid requests/responses to the Flipt REST API:</p>
+<p><img alt="Flipt API Docs" src="../assets/images/docs.png" /></p>
                 
                   
                 

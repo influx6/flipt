@@ -275,6 +275,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#evaluation" title="Evaluation" class="md-nav__link">
+    Evaluation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entities" title="Entities" class="md-nav__link">
+    Entities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context" title="Context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -330,6 +357,18 @@
   <li class="md-nav__item">
     <a href="../installation/" title="Installation" class="md-nav__link">
       Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integration/" title="Integration" class="md-nav__link">
+      Integration
     </a>
   </li>
 
@@ -396,6 +435,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#evaluation" title="Evaluation" class="md-nav__link">
+    Evaluation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entities" title="Entities" class="md-nav__link">
+    Entities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context" title="Context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -414,14 +480,14 @@
                 
                 
                 <h1 id="concepts">Concepts</h1>
-<p>This document describes the basic concepts of Flipt. More information on how to actually use Flipt is noted in the <a href="../getting_started/">Getting Started</a> documentation.</p>
+<p>This document describes the basic concepts of Flipt. More information on how to use Flipt is noted in the <a href="../getting_started/">Getting Started</a> documentation.</p>
 <h2 id="flags">Flags</h2>
-<p>Flags are the basic unit in the <strong>Flipt</strong> ecosystem. Flags represent experiments or concepts that you want to be able to enable or disable for users of your applications.</p>
+<p>Flags are the basic unit in the Flipt ecosystem. Flags represent experiments or features that you want to be able to enable or disable for users of your applications.</p>
 <p>For example, a flag named <code>new-contact-page</code>, could be used to determine whether or not a given user sees the latest version of a contact us page that you are working on when they visit your homepage.</p>
 <p>Flags can be used as simple on/off toggles or with variants and rules to support more elaborate usecases.</p>
 <p><img alt="Flags Example" src="../assets/images/concepts/00_flags.png?raw=true" title="Flags Example" /></p>
 <h2 id="variants">Variants</h2>
-<p>Variants are options for flags. For example, if you have a flag <code>colorscheme</code> that determines which main colors your users see when they log in to your application, then possible variants could be:</p>
+<p>Variants are options for flags. For example, if you have a flag <code>colorscheme</code> that determines which main colors your users see when they log in to your application, then possible variants could be include <code>blue</code>, <code>green</code> or <code>red</code>.</p>
 <p><img alt="Variants Example" src="../assets/images/concepts/01_variants.png?raw=true" title="Variant Example" /></p>
 <h2 id="segments">Segments</h2>
 <p>Segments allow you to split your userbase or audience up into predefined slices. This is a powerful feature that enables targeting groups to determine if a flag or variant applies to them.</p>
@@ -429,12 +495,24 @@
 <p><img alt="New Users Segment" src="../assets/images/concepts/02_segments.svg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Segments are global across the <strong>Flipt</strong> application, so they can be used with multiple flags.</p>
+<p>Segments are global across the Flipt application, so they can be used with multiple flags.</p>
 </div>
 <h2 id="constraints">Constraints</h2>
-<p>Constraints allow you to determine which segment a given user or entity falls into.</p>
+<p>Constraints allow you to determine which segment a given entity is a part of.</p>
 <p>For example, for a user to fall into the above <code>new-users</code> segment, you may want to check their <code>finished_onboarding</code> property.</p>
 <p><img alt="Constraints Example" src="../assets/images/concepts/03_constraints.png?raw=true" title="Constraints Example" /></p>
+<p>All constraints have a <em>property</em>, <em>type</em>, <em>operator</em> and optionally a <em>value</em>.</p>
+<dl>
+<dt><strong>property</strong></dt>
+<dd>the context key to match against, see the context section below</dd>
+<dt><strong>type</strong></dt>
+<dd>one of the basic types: string, number or boolean</dd>
+<dt><strong>operator</strong></dt>
+<dd>how to compare the property against the value</dd>
+<dt><strong>value</strong> (optional)</dt>
+<dd>what to compare with the operator<dd>
+</dl>
+
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In order for a segment to match, it must match <strong>ALL</strong> of it's constraints.</p>
@@ -444,12 +522,51 @@
 <p>Rules can be as simple as <code>IF IN segment THEN RETURN variant_a</code> or they can be more rich by using distribution logic to rollout features on a percent basis.</p>
 <p>Continuing our previous example, we may want to return the flag variant <code>blue</code> for all entities in the <code>new-users</code> segment. This would be configured like so:</p>
 <p><img alt="Rules Example" src="../assets/images/concepts/04_rules.png?raw=true" title="Rules Example" /></p>
-<p><strong>Note:</strong> As shown, rules are evaluated in order per their rank from 1-N. The first rule that matches wins.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As shown, rules are evaluated in order per their rank from 1-N. The first rule that matches wins. Once created, rules can be re-ordered to change how they are evaluated.</p>
+</div>
 <h2 id="distributions">Distributions</h2>
 <p>Distributions allow you to rollout different variants of your flag to percentages of your userbase based on your rules.</p>
 <p>Let's say that instead of always showing the <code>blue</code> variant to your <code>new-users</code> segment, you want to show blue to 30% of <code>new-users</code>, <code>red</code> to 10%, and <code>green</code> to the remaining 60%. You would accomplish this using rules with distributions:</p>
 <p><img alt="Distributions Example" src="../assets/images/concepts/05_distributions.png?raw=true" title="Distributions Example" /></p>
-<p>This is an extremely powerful feature of <strong>Flipt</strong> that can help you seamlessly deploy new features of your applications to your users while also limiting reach of potential bugs.</p>
+<p>This is an extremely powerful feature of Flipt that can help you seamlessly deploy new features of your applications to your users while also limiting reach of potential bugs.</p>
+<h2 id="evaluation">Evaluation</h2>
+<p>Evaluation is the process of sending requests to the Flipt server to process and determine if that request matches any of your segments, and if so which variant to return.</p>
+<p>In the above example involving colors, evaluation is where you send information about your current user to determine if they are a <code>new-user</code>, and which color (<code>blue</code>, <code>red</code>, or <code>green</code>) that they should see for their main colorscheme.</p>
+<h3 id="entities">Entities</h3>
+<p>Evaluation works by uniquely identifying each <em>thing</em> that you want to compare against your segments and flags. We call this an <code>entity</code> in the Flipt ecosystem. More often than not this will be a user, but we didn't want to make any assumptions on how your application works, which is why <code>entity</code> was chosen.</p>
+<dl>
+<dt><strong>entity</strong></dt>
+<dd>what you want to test against in your application</dd>
+</dl>
+
+<p>For Flipt to successfully determine which <em>bucket</em> your entities fall into, it must have a way to uniquely identify them. This is the <code>entityId</code> and it is a simple string. It's up to you what that <code>entityId</code> is.</p>
+<p>It could be a:</p>
+<ul>
+<li>email address</li>
+<li>userID</li>
+<li>ip address</li>
+<li>physical address</li>
+</ul>
+<p>Anything that is unique enough for your application and it's requirements.</p>
+<h3 id="context">Context</h3>
+<p>The final piece of the puzzle is context. Context allows Flipt to determine which segment your entity falls into, by comparing it to all of the possible constraints that you defined.</p>
+<dl>
+<dt><strong>context</strong></dt>
+<dd>metadata associated with your entity, used to determine which if any segments that entity is a member of</dd>
+</dl>
+
+<p>Examples of context could include:</p>
+<ul>
+<li>isAdmin</li>
+<li>favoriteColor</li>
+<li>country</li>
+<li>freeUser</li>
+</ul>
+<p>Think of these as pieces of information that are usually not unique, but that can be used to split your entities into your segments.</p>
+<p>You can include as much or as little context for each entity as you want, however the more context that you provide, the more likely it is that a entity will match one of your segments.</p>
+<p>In Flipt, <code>context</code> is a simple map of key-value pairs where the key is the property to match against all constraints, and the value is what is compared.</p>
                 
                   
                 

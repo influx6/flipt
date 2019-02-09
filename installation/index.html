@@ -374,6 +374,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integration/" title="Integration" class="md-nav__link">
+      Integration
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -506,15 +518,15 @@
 <div class="codehilite"><pre><span></span>docker run -d <span class="se">\</span>
     -p <span class="m">8080</span>:8080 <span class="se">\</span>
     -p <span class="m">9000</span>:9000 <span class="se">\</span>
-    -v <span class="nv">$HOME</span>/flipt/data:/var/opt/flipt <span class="se">\</span>
+    -v <span class="nv">$HOME</span>/flipt:/var/opt/flipt <span class="se">\</span>
     markphelps/flipt:master
 </pre></div>
 
 
-<p>This will download and start a Flipt container and publish ports needed to access HTTP and GRPC. All Flipt data will be stored as subdirectories of <code>$HOME/flipt/</code>.</p>
+<p>This will download the image and start a Flipt container and publish ports needed to access the UI and backend server. All persistent Flipt data will be stored in <code>$HOME/flipt</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>$HOME/flipt/data</code> is just used as an example, you can use any directory you would like on the host.</p>
+<p><code>$HOME/flipt</code> is just used as an example, you can use any directory you would like on the host.</p>
 </div>
 <p>The Flipt container uses host mounted volumes to persist data:</p>
 <table>
@@ -527,7 +539,7 @@
 </thead>
 <tbody>
 <tr>
-<td>$HOME/flipt/data</td>
+<td>$HOME/flipt</td>
 <td>/var/opt/flipt</td>
 <td>For storing application data</td>
 </tr>
@@ -580,14 +592,14 @@
 <td>/var/opt/flipt</td>
 </tr>
 <tr>
-<td>db.migrations.path</td>
-<td>Where the Flipt database migration files are kept</td>
-<td>/etc/flipt/config/migrations</td>
-</tr>
-<tr>
 <td>db.migrations.auto</td>
 <td>If database migrations are run on Flipt startup</td>
 <td>true</td>
+</tr>
+<tr>
+<td>db.migrations.path</td>
+<td>Where the Flipt database migration files are kept</td>
+<td>/etc/flipt/config/migrations</td>
 </tr>
 </tbody>
 </table>
@@ -635,6 +647,20 @@
             </div>
           </a>
         
+        
+          <a href="../integration/" title="Integration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Integration
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

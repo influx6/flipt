@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
     
     
       
@@ -68,6 +68,12 @@
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
+    
+    
+      
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44979762-6"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44979762-6")</script>
+      
     
     
   </head>
@@ -555,17 +561,17 @@
 <li>Go back to the flag you created at the beginning.</li>
 <li>Click <code>Targeting</code>.</li>
 <li>Click <code>New Rule</code>.</li>
-<li>Under <code>Segment:</code>, choose the segment you created earlier.</li>
-<li>Under <code>Then serve:</code>, choose <code>A Percentage Rollout</code>.</li>
+<li>Under <code>Segment:</code> choose the segment you created earlier.</li>
+<li>Under <code>Then serve:</code> choose <code>A Percentage Rollout</code>.</li>
 <li>You should see your two variants that you created earlier, with a percentage of 50% each next to them.</li>
 <li>Click <code>Add Rule</code>.</li>
 </ol>
 <p><img alt="Create Rule" src="../assets/images/getting_started/04_create_rule.png" /></p>
-<p>You should see the message <code>Rule added!</code>.</p>
-<p>You just created your first rule along with a distribution! A distribution is a way of assigning a percentage for which percent of entities evaluated get a specific variant. The higher the percentage assigned, the more likely it is that any entity will get that specific variant.</p>
+<p>You should see the message <code>Rule added!</code>. You just created your first rule and distribution.</p>
+<p>A distribution is a way of assigning a percentage for which entities evaluated get a specific variant. The higher the percentage assigned, the more likely it is that any entity will get that specific variant.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You could just as easily have picked a single variant instead of <code>A Percentage Rollout</code> when setting up your rule. This effectively would mean you have a distribution of one, a variant with 100% chance of being returned.</p>
+<p>You could just as easily have picked a single variant instead of <code>A Percentage Rollout</code> when setting up your rule. This would effectively mean you have a single distribution, a variant with 100% chance of being returned.</p>
 </div>
 <h2 id="evaluating-with-the-debug-console">Evaluating with the Debug Console</h2>
 <p>After creating the above flag, segment and targeting rule, you're now ready to test how this would work in your application.</p>
@@ -667,15 +673,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../assets/javascripts/application.a353778b.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-44979762-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

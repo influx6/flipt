@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
     
     
       
@@ -68,6 +68,12 @@
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
+    
+    
+      
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44979762-6"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44979762-6")</script>
+      
     
     
   </head>
@@ -303,63 +309,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#after-starting-the-container" title="After starting the container" class="md-nav__link">
-    After starting the container
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-on-linux" title="Installing on Linux" class="md-nav__link">
-    Installing on Linux
+  <a href="#linux-packages" title="Linux Packages" class="md-nav__link">
+    Linux Packages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-from-source" title="Installing From Source" class="md-nav__link">
-    Installing From Source
+  <a href="#download-from-github" title="Download from GitHub" class="md-nav__link">
+    Download from GitHub
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#build" title="Build" class="md-nav__link">
-    Build
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#copy" title="Copy" class="md-nav__link">
-    Copy
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure" title="Configure" class="md-nav__link">
-    Configure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run" title="Run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -428,63 +393,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#after-starting-the-container" title="After starting the container" class="md-nav__link">
-    After starting the container
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-on-linux" title="Installing on Linux" class="md-nav__link">
-    Installing on Linux
+  <a href="#linux-packages" title="Linux Packages" class="md-nav__link">
+    Linux Packages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-from-source" title="Installing From Source" class="md-nav__link">
-    Installing From Source
+  <a href="#download-from-github" title="Download from GitHub" class="md-nav__link">
+    Download from GitHub
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#build" title="Build" class="md-nav__link">
-    Build
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#copy" title="Copy" class="md-nav__link">
-    Copy
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure" title="Configure" class="md-nav__link">
-    Configure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run" title="Run" class="md-nav__link">
-    Run
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -519,7 +443,7 @@
     -p <span class="m">8080</span>:8080 <span class="se">\</span>
     -p <span class="m">9000</span>:9000 <span class="se">\</span>
     -v <span class="nv">$HOME</span>/flipt:/var/opt/flipt <span class="se">\</span>
-    markphelps/flipt:master
+    markphelps/flipt:latest
 </pre></div>
 
 
@@ -550,69 +474,23 @@
 <p class="admonition-title">Warning</p>
 <p>If you don't use mounted volumes to persist your data, your data will be lost when the container exits!</p>
 </div>
-<h3 id="after-starting-the-container">After starting the container</h3>
 <p>After starting the container you can visit <a href="http://0.0.0.0:8080">http://0.0.0.0:8080</a> to view the application.</p>
-<h2 id="installing-on-linux">Installing on Linux</h2>
+<h2 id="linux-packages">Linux Packages</h2>
 <p><strong>Flipt RPM/DEB binary packages coming soon!</strong></p>
-<h2 id="installing-from-source">Installing From Source</h2>
-<p>If you'd like to build and install Flipt from source. You can do so following much of the same instructions from the <a href="../development/">Development</a> documentation to get setup.</p>
-<h3 id="build">Build</h3>
-<p>Once you are ready to build the binary, you should be able to run:</p>
-<div class="codehilite"><pre><span></span><span class="nv">BUILD_OPTS</span><span class="o">=</span><span class="s2">&quot;-o /bin/flipt&quot;</span> make build
-</pre></div>
-
-
-<p>This will build the binary for your operating system and output the resulting file to <code>/bin/flipt</code>. You can change this path to whatever you would like.</p>
-<h3 id="copy">Copy</h3>
-<p>You'll need to copy the files in the <code>etc/config</code> directory somewhere that Flipt can access them. These files include necessary database migrations and configuration data.</p>
-<h3 id="configure">Configure</h3>
-<p>You may also need to change some configuration properties from their defaults.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Before editing the default configuration, first backup the file <code>config/default.yml</code> to <code>config/default.yml.bak</code> or similar so that you can restore the defaults if need be.</p>
+<h2 id="download-from-github">Download from GitHub</h2>
+<p>You can always download the latest release archive for your architecture from the <a href="https://github.com/markphelps/flipt/releases">Releases</a> section on GitHub.</p>
+<p>This archive contains the Flipt binary, configuration, database migrations, README, LICENSE and CHANGELOG files.</p>
+<p>Copy the binary, config file and migrations to an accessible location on your host.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will need to update the config file: <code>default.yml</code> if your migrations and database locations differ from the standard locations.</p>
 </div>
-<p>Edit <code>config/default.yml</code> and make sure the following properties are set and match your expectations:</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>db.name</td>
-<td>The name given to the Flipt database (suffixed with .db)</td>
-<td>flipt</td>
-</tr>
-<tr>
-<td>db.path</td>
-<td>Where to store the Flipt database</td>
-<td>/var/opt/flipt</td>
-</tr>
-<tr>
-<td>db.migrations.auto</td>
-<td>If database migrations are run on Flipt startup</td>
-<td>true</td>
-</tr>
-<tr>
-<td>db.migrations.path</td>
-<td>Where the Flipt database migration files are kept</td>
-<td>/etc/flipt/config/migrations</td>
-</tr>
-</tbody>
-</table>
-<p>All of the configuration properties are described in the <a href="../configuration/">Configuration</a> documentation.</p>
-<h3 id="run">Run</h3>
-<p>You can now run Flipt and see the available options by issuing:</p>
-<div class="codehilite"><pre><span></span>/bin/flipt --help
+<p>Run the Flipt binary with:</p>
+<div class="codehilite"><pre><span></span>./flipt --config PATH_TO_YOUR_CONFIG
 </pre></div>
 
 
-<p>To run the server for the first time, run:</p>
-<div class="codehilite"><pre><span></span>/bin/flipt --config <span class="o">[</span>PATH_TO_YOUR_CONFIG_FILE<span class="o">]</span>
-</pre></div>
+<p>See the <a href="../configuration/">Configuration</a> section for more details.</p>
                 
                   
                 
@@ -691,15 +569,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../assets/javascripts/application.a353778b.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-44979762-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

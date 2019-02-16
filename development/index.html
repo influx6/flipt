@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
     
     
       
@@ -68,6 +68,12 @@
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
+    
+    
+      
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44979762-6"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44979762-6")</script>
+      
     
     
   </head>
@@ -483,6 +489,7 @@
 <p>Before starting, make sure you have the following installed:</p>
 <ul>
 <li>GCC Compiler</li>
+<li><a href="https://sqlite.org/index.html">SQLite</a></li>
 <li><a href="https://golang.org/doc/install">Go 1.10+</a></li>
 <li><a href="https://github.com/protocolbuffers/protobuf">Protoc Compiler</a></li>
 </ul>
@@ -498,11 +505,18 @@
 <h2 id="vagrant">Vagrant</h2>
 <p>You can also easily get started with a development environment running in a VM using <a href="https://www.vagrantup.com/">Vagrant</a> and <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box</a>.</p>
 <p>Once you have Vagrant and Virtual Box installed you can change into either the <code>build/ubuntu</code> or <code>build/centos</code> directories and run <code>vagrant up</code>.</p>
-<p>This will provision a VM that installs the necessary dev dependencies, runs the Flipt test suite and builds the Flipt binary.</p>
-<p>You can than <code>vagrant ssh</code> into your VM and play around.</p>
+<p>This will provision a VM that installs the necessary dev dependencies and runs the Flipt test suite.</p>
+<p>Once the provisioning process is complete, run:</p>
+<div class="codehilite"><pre><span></span>$ vagrant ssh
+$ <span class="nb">cd</span> <span class="nv">$GOPATH</span>/src/github.com/markphelps/flipt
+$ make dev
+</pre></div>
+
+
+<p>This will run Flipt in development mode inside your VM.</p>
 <h2 id="configuration">Configuration</h2>
-<p>Configuration for running when developing Flipt can be found at <code>./etc/config/dev.yml</code>. To run Flipt with this configuration, run:</p>
-<div class="codehilite"><pre><span></span>./bin/flipt --config ./etc/config/dev.yml
+<p>Configuration for running when developing Flipt can be found at <code>./config/local.yml</code>. To run Flipt with this configuration, run:</p>
+<div class="codehilite"><pre><span></span>make dev
 </pre></div>
 
 
@@ -513,10 +527,9 @@
 <ul>
 <li><code>flipt.pb.go</code></li>
 <li><code>flipt.pb.gw.go</code></li>
-<li><code>flipt.validator.pb.go</code></li>
 </ul>
 <h3 id="updating-assets">Updating assets</h3>
-<p>Running <code>make assets</code> will regenerate the embedded assets (ui, api documentation) so that the next time <code>make build</code> is run they will be included in the new binary.</p>
+<p>Running <code>make generate</code> will regenerate the embedded assets (ui, api documentation) so that the next time <code>make dev</code> is run they will be included.</p>
 <h4 id="ui-components">UI components</h4>
 <p>The UI is built using <a href="https://yarnpkg.com/en/">Yarn</a> and <a href="https://webpack.js.org/">webpack</a> and is also statically compiled into the Flipt binary.</p>
 <p>The <a href="https://github.com/markphelps/flipt/tree/master/ui/README.md">ui/README.md</a> has more information on how to build the UI and also how to run it locally during development.</p>
@@ -598,15 +611,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../assets/javascripts/application.a353778b.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-44979762-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

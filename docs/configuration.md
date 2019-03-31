@@ -62,4 +62,17 @@ export FLIPT_DB_PATH=/tmp/db
 
 In-memory caching is currently only available for flags. When enabled, in-memory caching has been shown to speed up the fetching of individual flags by 10x.
 
+To enable caching set the following in your config:
+
+```yaml
+cache:
+  enabled: true
+```
+
 Work is planned to add caching support to rule evaluation soon.
+
+## Authentication
+
+Flipt currently has no built in authentication, authorization or encryption as Flipt was designed to work inside your trusted architecture and not be exposed publicly.
+
+If you do wish to expose the Flipt dashboard and REST API publicly using HTTP Basic Authentication, you can do so by using a reverse proxy. There is an [example](https://github.com/markphelps/flipt/tree/master/examples/auth) provided in the GitHub repository showing how this could work.

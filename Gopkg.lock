@@ -2,12 +2,12 @@
 
 
 [[projects]]
-  digest = "1:2d3b918a38b7a2daf5a9209043b422c8f97803e5d5ea6f8a9d41fd3045ef38db"
+  digest = "1:86520086f5a77df64dfa57ab48e80532a9893b1b52769738937d7022ec6d0855"
   name = "github.com/Masterminds/squirrel"
   packages = ["."]
   pruneopts = "NT"
-  revision = "a6b93000bd219143c56c16e6cb1c4b91da3f224b"
-  version = "v1.0"
+  revision = "fa735ea14f09f8685fcf5e75db091feb5a410730"
+  version = "v1.1"
 
 [[projects]]
   digest = "1:4b8b5811da6970495e04d1f4e98bb89518cc3cfc3b3f456bdb876ed7b6c74049"
@@ -178,6 +178,14 @@
   version = "v1.8.0"
 
 [[projects]]
+  branch = "master"
+  digest = "1:ba4d80533076523a4a66cb267f16363d2aea3f6c1eb8277d8d226c7a573cd7e9"
+  name = "github.com/markphelps/flipt-grpc-go"
+  packages = ["."]
+  pruneopts = "NT"
+  revision = "3ebb133e62c07079220c8093889cfed3c8db19f8"
+
+[[projects]]
   digest = "1:e0a9ecd540b69f570f96c593b713268aad428e4a25a98f23467c59e6f69ab880"
   name = "github.com/mattn/go-colorable"
   packages = ["."]
@@ -269,15 +277,15 @@
   revision = "6a9ea43bcacdf716a5c1b38efff722c07adf0069"
 
 [[projects]]
-  digest = "1:cd2f2cba5b7ffafd0412fb647ff4bcff170292de57270f05fbbf391e3eb9566b"
+  digest = "1:c8a0dfc6208c2af75549dbd7a0c4446cc214b7a049a872858a8ec6f58e4fd082"
   name = "github.com/sirupsen/logrus"
   packages = [
     ".",
     "hooks/test",
   ]
   pruneopts = "NT"
-  revision = "bcd833dfe83d3cebad139e4a29ed79cb2318bf95"
-  version = "v1.2.0"
+  revision = "dae0fa8d5b0c810a8ab733fbd5510c7cae84eca4"
+  version = "v1.4.0"
 
 [[projects]]
   digest = "1:a3d234acd819fde4b1875e9e9e68a1d8368115983a74ec23c379973a8f179f07"
@@ -331,15 +339,15 @@
   version = "v1.3.1"
 
 [[projects]]
-  digest = "1:4af061277c04a7660e082acc2020f4c66d2c21dfc62e0242ffa1d2120cdfb4ec"
+  digest = "1:8e8fc2cb42cfa0a18fda0c9c4034092faa7aac773da5efdde8828eb4b96c001d"
   name = "github.com/stretchr/testify"
   packages = [
     "assert",
     "require",
   ]
   pruneopts = "NT"
-  revision = "f35b8ab0b5a2cef36673838d662e249dd9c94686"
-  version = "v1.2.2"
+  revision = "ffdc059bfe9ce6a4e144ba849dbedead332c6053"
+  version = "v1.3.0"
 
 [[projects]]
   digest = "1:82d3ecba951974e9842e4f83defa94f7b6feb9b9ec5e07da474bac0954ffbe2e"
@@ -359,7 +367,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:9300b9f62f41c3dded875b33117e09e9269790eb4372f5e96621f1e375ed5307"
+  digest = "1:7514a961568b6f5d2a114b82de007f4714a27c65dffc71433fe8620a8a9db708"
   name = "golang.org/x/net"
   packages = [
     "context",
@@ -371,7 +379,7 @@
     "trace",
   ]
   pruneopts = "NT"
-  revision = "927f97764cc334a6575f4b7a1584a147864d5723"
+  revision = "c95aed5357e77a4bf7d3955c46740000a17adee1"
 
 [[projects]]
   branch = "master"
@@ -416,15 +424,14 @@
   version = "v0.3.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:101e21ab9a69c28df4101ea1eb1cbcbd05e4a3854fad22f7ac8d6121152dab86"
+  digest = "1:7718b98371b8d8d890af53f8d3086ede6e6ac11db80097ec2c6ecfc2f903cffb"
   name = "google.golang.org/genproto"
   packages = [
     "googleapis/rpc/status",
     "protobuf/field_mask",
   ]
   pruneopts = "NT"
-  revision = "bd9b4fb69e2ffd37621a6caa54dcbead29b546f2"
+  revision = "383e8b2c3b9e36c4076b235b32537292176bae20"
 
 [[projects]]
   digest = "1:bbcb21f83bc020a83a9b064251a645b956d2f446040d9535a499c4508e9597e0"
@@ -496,6 +503,7 @@
     "github.com/grpc-ecosystem/grpc-gateway/runtime",
     "github.com/grpc-ecosystem/grpc-gateway/utilities",
     "github.com/hashicorp/golang-lru",
+    "github.com/markphelps/flipt-grpc-go",
     "github.com/mattn/go-sqlite3",
     "github.com/phyber/negroni-gzip/gzip",
     "github.com/pkg/errors",

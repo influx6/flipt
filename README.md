@@ -1,18 +1,23 @@
-# Flipt
+<p align=center>
+	<img src="logo.svg" alt="Flipt" width=200 height=200 />
+</p>
+
+<p align="center">A self contained feature flag solution</p>
+
+<hr />
+
+![Flipt](docs/assets/images/flipt.png)
 
 [![Build Status](https://travis-ci.com/markphelps/flipt.svg?token=TBiDDmnBkCmRa867CqCG&branch=master)](https://travis-ci.com/markphelps/flipt)
-[![CodeClimate Coverage](https://img.shields.io/codeclimate/coverage/markphelps/flipt.svg?style=flat)](https://codeclimate.com/github/markphelps/flipt)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6236dff731dd5c2e0669/test_coverage)](https://codeclimate.com/github/markphelps/flipt/test_coverage)
 [![Go Report Card](https://goreportcard.com/badge/github.com/markphelps/flipt)](https://goreportcard.com/report/github.com/markphelps/flipt)
 [![GitHub Release](https://img.shields.io/github/release/markphelps/flipt.svg?style=flat)](https://github.com/markphelps/flipt/releases)
 [![Join the chat at https://gitter.im/markphelps/flipt](https://badges.gitter.im/markphelps/flipt.svg)](https://gitter.im/markphelps/flipt?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A self contained feature flag solution.
-
-![Flipt](docs/assets/images/flipt.png)
 
 ## Documentation
 
-Documentation is hosted at: [https://markphelps.github.io/flipt/](https://markphelps.github.io/flipt/)
+[https://flipt.dev/](https://flipt.dev/)
 
 ## What is Flipt
 
@@ -21,8 +26,6 @@ Flipt is an open source, self contained application that enables you to use feat
 This means that you can deploy Flipt within your existing infrastructure and not have to worry about your information being sent to a third party, or the latency required to communicate across the internet.
 
 Flipt includes native client SDKs as well as a REST API so you can choose how to best integrate Flipt with your applications.
-
-For more on Flipt and it's concepts, take a look at the [Concepts](https://markphelps.github.io/flipt/concepts/) documentation.
 
 ## Flipt Features
 
@@ -43,7 +46,7 @@ Flipt features include:
 
 Many organizations understand the benefit of using feature flags in production, so they choose to implement them themselves in their main application or monolith.
 
-As their organization grows, so does their application/infrastructure and functionality makes it's way into a multitude of other services. Many times those services aren't even implemented in the same language.
+As their organization grows, so does their infrastructure and functionality makes it's way into a multitude of other services. Many times those services aren't even implemented in the same language.
 
 This is where their original feature flag solution tends to break down as it cannot be easily adapted to those services or languages. This results in:
 
@@ -60,7 +63,7 @@ Flipt is a single, self contained binary that you run on your own servers or clo
 
 * **Security**. No data leaves your servers and you don't have to open your systems to the outside world to communicate with Flipt. It all runs within your existing infrastructure.
 * **Speed**. Since Flipt is co-located with your existing services, you do not have to communicate across the internet to another application running on the other side of the world which can add excessive latency and slow down your applications.
-* **Simplicity**. Flipt is a single binary with no external dependencies. This means there is no database to manage or connect to, no clusters to configure, and data backup is as simple as copying a single file.
+* **Simplicity**. Flipt is a single binary with no dependencies. This means there is no external database to manage or connect to, no clusters to configure, and data backup is as simple as copying a single file.
 
 ### Try It
 
@@ -70,36 +73,19 @@ Flipt is a single, self contained binary that you run on your own servers or clo
 
 Flipt UI will now be reachable at [http://localhost:8080/](http://localhost:8080).
 
-For more permanent methods of running Flipt, see the [Installation](https://markphelps.github.io/flipt/installation/) section.
+For more permanent methods of running Flipt, see the [Installation](https://flipt.dev/installation/) section.
 
 ## What's Next
 
-To see Flipt in action, checkout an [example](example/).
+To see Flipt in action, checkout an [example](examples/).
 
-Want to get up and running with Flipt? See [Getting Started](https://markphelps.github.io/flipt/getting_started/).
+Want to get up and running with Flipt? See [Getting Started](https://flipt.dev/getting_started/).
 
-For a more detailed guide on how to setup and run Flipt, checkout the [Installation](https://markphelps.github.io/flipt/installation/) documentation.
+For a more detailed guide on how to setup and run Flipt, checkout the [Installation](https://flipt.dev/installation/) documentation.
 
-To learn how Flipt works behind the curtain, read up on it's [Architecture](https://markphelps.github.io/flipt/architecture/).
+To learn how Flipt works, read up on it's [Architecture](https://flipt.dev/architecture/).
 
-For information on how to integrate Flipt with your existing applications, see the [Integration](https://markphelps.github.io/flipt/integration/) guide.
-
-## Author
-
-* Website: [https://markphelps.me](https://markphelps.me)
-* Twitter: [@mark_a_phelps](https://twitter.com/mark_a_phelps)
-* Email: _mark.aaron.phelps at gmail.com_
-
-## TODO/Contributing
-
-I would love your help! Before submitting a PR, please read over the [Contributing](.github/contributing) guide.
-
-Here's a couple of areas that could use some love:
-
-* Documentation - Does something not make sense in the documentation? Could it be worded better? Please help!
-* Examples - More examples on how to use Flipt in other languages.
-* Test Coverage - Would love to get all coverage over 80% ([#2](https://github.com/markphelps/flipt/issues/2)) as well as add integration tests ([#5](https://github.com/markphelps/flipt/issues/5)).
-* Javascripts - I'm no JS wizz, I'm sure the Javascript code in [ui/src](ui/src) could be improved/simplified/tested.
+For information on how to integrate Flipt with your existing applications, see the [Integration](https://flipt.dev/integration/) guide.
 
 ## Licensing
 
@@ -122,13 +108,28 @@ The server code is licensed under the [GPL 3.0 License](https://spdx.org/license
 
 If there are any concerns about the use of this license for the server, please [open an issue](https://github.com/markphelps/flipt/issues/new) on GitHub so that we can discuss publicly.
 
+## Author
+
+* Website: [https://markphelps.me](https://markphelps.me)
+* Twitter: [@mark_a_phelps](https://twitter.com/mark_a_phelps)
+* Email: _mark.aaron.phelps at gmail.com_
+
+## Contributing
+
+I would love your help! Before submitting a PR, please read over the [Contributing](.github/contributing) guide.
+
+Here's a couple of areas that could use some love:
+
+* Documentation - Does something not make sense in the documentation? Could it be worded better? Please help!
+* Examples - More examples on how to use Flipt in other languages.
+* Javascripts - I'm no JavaScript expert, I'm sure the code in [ui/src](ui/src) could be improved/simplified/tested.
+
 ## Pro Version
 
 My plan is to soon start working on a Pro Version of Flipt for enterprise. Along with support, some of the planned features include:
 
 * User management/permissions
 * Multiple environments
-* HTTPS
 * Audit log
 * Streaming updates
 * Metrics
